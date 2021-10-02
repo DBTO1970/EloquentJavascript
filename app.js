@@ -16,8 +16,13 @@
 //     }
 // }
 
-const range = (n1, n2) => {
-  console.log(n1, n2);
+const range = (n1, n2, step) => {
+  console.log(n1, n2, step);
+  if (step) {
+      step = step;
+  } else {
+      step = 1;
+  }
   let numberArray = [];
   let message;
   total = 0;
@@ -32,20 +37,20 @@ const range = (n1, n2) => {
     if (n1 < n2) {
         message = 'Success!';
         numberArray[0] = n1;
-        let n = n1 + 1;
+        let n = n1 + step;
         while (n <= n2) {
             numberArray.push(n);
-            n++;
+            n += step;
         }
         sum(numberArray);
         
     } else {
             message = 'Success!';
             numberArray[0] = n2;
-            let n = n2 + 1;
+            let n = n2 + step;
             while (n <= n1) {
             numberArray.push(n);
-            n++;
+            n += step;
             }
             sum(numberArray);
 
@@ -57,6 +62,6 @@ const range = (n1, n2) => {
 
 
 
-range(1, 10);
+range(1, 10, 5);
 
 
